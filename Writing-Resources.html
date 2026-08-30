@@ -25,8 +25,17 @@
         }
 
         header {
-            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("We're Just Here for the view.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 8rem 2rem;
             text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         h1 {
@@ -34,15 +43,21 @@
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
             font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 0.05em;
-            color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            z-index: 1;
         }
 
         @media (max-width: 768px) {
@@ -55,15 +70,18 @@
             }
 
             header {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
+                min-height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>writing resources</h1>
-        <p class="subtitle">monday lessons, helpful readings, quick reference, and more</p>
+        <div class="header-content">
+            <h1>writing resources</h1>
+            <p class="subtitle">monday lessons, helpful readings, quick reference, and more</p>
+        </div>
     </header>
     <!DOCTYPE html>
 <html lang="en">
@@ -98,52 +116,6 @@
       line-height: 1.6;
       color: var(--text-dark);
       background-color: #fafafa;
-    }
-    
-    header {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
-      padding: 4rem 0 3rem 0;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-    
-    .subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
     }
     
     nav {
@@ -241,14 +213,6 @@
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-      }
-
       nav {
         gap: 1rem;
         margin-bottom: 1rem;
@@ -276,9 +240,16 @@
         <a href="teaching-portfolio.html">Teaching Portfolio</a>
         <a href="projects.html">Projects</a>
       </nav>
-    </div>
-  </header>
-</body>
-</html>
+
+      <div class="separator"></div>
+
+      <div class="main-content">
+        <div class="course-section">
+          <h2>Writing Resources</h2>
+          <p>Content coming soon...</p>
+        </div>
+      </div>
+    </body>
+    </html>
 </body>
 </html>
