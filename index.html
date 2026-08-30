@@ -25,8 +25,17 @@
         }
 
         header {
-            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("We're Just Here for the view.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 8rem 2rem;
             text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         h1 {
@@ -34,15 +43,21 @@
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
             font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 0.05em;
-            color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            z-index: 1;
         }
 
         @media (max-width: 768px) {
@@ -55,240 +70,192 @@
             }
 
             header {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
+                min-height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>zuzanna koziatek</h1>
-        <p class="subtitle">teacher. writer. student.</p>
+        <div class="header-content">
+            <h1>zuzanna koziatek</h1>
+            <p class="subtitle">teacher. writer. student.</p>
+        </div>
     </header>
+
     <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inquiry Resources - Reading, Writing and Inquiry Resources</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      --primary-dark: #1b4332;
-      --primary-medium: #2d6a4f;
-      --primary-light: #40916c;
-      --accent-blue: #1e3a8a;
-      --accent-light: #e8f5e9;
-      --accent-lighter: #f1f5fe;
-      --text-dark: #1a1a1a;
-      --text-light: #555555;
-      --border-color: #e0e0e0;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-      line-height: 1.6;
-      color: var(--text-dark);
-      background-color: #fafafa;
-    }
-    
-    header {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
-      padding: 4rem 0 3rem 0;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-      position: relative;
-      overflow: hidden;
-    }
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Inquiry Resources - Reading, Writing and Inquiry Resources</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        :root {
+          --primary-dark: #1b4332;
+          --primary-medium: #2d6a4f;
+          --primary-light: #40916c;
+          --accent-blue: #1e3a8a;
+          --accent-light: #e8f5e9;
+          --accent-lighter: #f1f5fe;
+          --text-dark: #1a1a1a;
+          --text-light: #555555;
+          --border-color: #e0e0e0;
+          --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+          --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+          --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+          line-height: 1.6;
+          color: var(--text-dark);
+          background-color: #fafafa;
+        }
 
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-    
-    .subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-    }
-    
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      padding: 1rem;
-      background-color: #fafafa;
-      border-radius: 8px;
-    }
-    
-    nav a {
-      color: #555555;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 0.6rem 1.2rem;
-      transition: all 0.3s ease;
-      border-radius: 4px;
-      position: relative;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #555555;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    nav a:hover {
-        background-color: rgba(85, 85, 85, 0.1);
-    }
+        nav {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          padding: 1rem;
+          background-color: #fafafa;
+          border-radius: 8px;
+        }
+        
+        nav a {
+          color: #555555;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.95rem;
+          padding: 0.6rem 1.2rem;
+          transition: all 0.3s ease;
+          border-radius: 4px;
+          position: relative;
+        }
+        
+        nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #555555;
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+        
+        nav a:hover {
+            background-color: rgba(85, 85, 85, 0.1);
+        }
 
-    nav a:hover::after {
-      width: calc(100% - 2.4rem);
-    }
+        nav a:hover::after {
+          width: calc(100% - 2.4rem);
+        }
 
-    .separator {
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--border-color), transparent);
-      margin: 0;
-    }
+        .separator {
+          height: 1px;
+          background: linear-gradient(to right, transparent, var(--border-color), transparent);
+          margin: 0;
+        }
 
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
+        .main-content {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 3rem 2rem;
+        }
 
-    .course-section {
-      background: linear-gradient(135deg, var(--accent-lighter) 0%, rgba(30, 58, 138, 0.05) 100%);
-      padding: 2.5rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-      border: 1px solid rgba(30, 58, 138, 0.1);
-      box-shadow: var(--shadow-sm);
-    }
+        .course-section {
+          background: linear-gradient(135deg, var(--accent-lighter) 0%, rgba(30, 58, 138, 0.05) 100%);
+          padding: 2.5rem;
+          border-radius: 12px;
+          margin-top: 2rem;
+          border: 1px solid rgba(30, 58, 138, 0.1);
+          box-shadow: var(--shadow-sm);
+        }
 
-    .course-section h2 {
-      font-size: 1.6rem;
-      color: var(--primary-dark);
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-weight: 600;
-    }
+        .course-section h2 {
+          font-size: 1.6rem;
+          color: var(--primary-dark);
+          margin-bottom: 1.5rem;
+          text-align: center;
+          font-weight: 600;
+        }
 
-    .course-section h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      color: var(--primary-medium);
-    }
+        .course-section h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 1.2rem;
+          color: var(--primary-medium);
+        }
 
-    .course-section p {
-      margin-bottom: 1.2rem;
-      line-height: 1.8;
-      color: var(--text-light);
-    }
+        .course-section p {
+          margin-bottom: 1.2rem;
+          line-height: 1.8;
+          color: var(--text-light);
+        }
 
-    .course-section ul {
-      list-style-position: inside;
-      padding-left: 2rem;
-    }
+        .course-section ul {
+          list-style-position: inside;
+          padding-left: 2rem;
+        }
 
-    .course-section li {
-      margin-bottom: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-light);
-    }
+        .course-section li {
+          margin-bottom: 0.9rem;
+          line-height: 1.7;
+          color: var(--text-light);
+        }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
+        @media (max-width: 768px) {
+          nav {
+            gap: 1rem;
+            margin-bottom: 1rem;
+          }
 
-      .subtitle {
-        font-size: 1rem;
-      }
+          nav a {
+            padding: 0.5rem 0.9rem;
+            font-size: 0.85rem;
+          }
 
-      nav {
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
+          .main-content {
+            padding: 2rem 1rem;
+          }
 
-      nav a {
-        padding: 0.5rem 0.9rem;
-        font-size: 0.85rem;
-      }
-
-      .main-content {
-        padding: 2rem 1rem;
-      }
-
-      .course-section {
-        padding: 1.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
+          .course-section {
+            padding: 1.5rem;
+          }
+        }
+      </style>
+    </head>
+    <body>
       <nav>
         <a href="index.html">Home</a>
         <a href="Writing-Resources.html">Writing Resources</a>
         <a href="teaching-portfolio.html">Teaching Portfolio</a>
         <a href="projects.html">Projects</a>
       </nav>
-    </div>
-  </header>
-  <div class="main-content">
-    <div class="course-section">
-      <h2>About Your Instructor</h2>
-       <p>Hello — I’m Zuzanna Koziatek, your instructor for ENG-W131: Reading, Writing, and Inquiry. I am passionate about teaching and sharing what I know about the Writing Process and multimodal composition with my students. Likewise, I take pride in being a part of my students' growth as critical thinkers. In a world that is too often strange and puzzling, full of questionable phenomena, I hope my students take what they learn about analysis and apply it beyond their college writing. Despite it being during the pandemic, the first time I taught an online English composition course solidifed any lingering doubts about whether I should purse a PhD in English or Psychology instead. 
-       <p>I love what I do and want you to know that I am here for you this semester. As an undergrad, I often thought coming to office hours would annoy my professors, but becoming an instructor myself, I realized we LOVE IT when students attend.</p>
-       <p>I am originally from Poland and moved to Cleveland, Ohio with my parents when I was ten years old. I initially studied English and Psychology at Cleveland State University, then moved on to CSU's MA program in English literature. In 2021, I moved to Bloomington, IN to pursue a PhD in English (Rhetoric). My scholarly interests include but are not limited to multimodal composition, mindful writing, online teaching, the rhetoric of health and medicine, and mental health rhetoric research.</p>
-  <p>Since coming to IU, I have moved to the outskirts of Bedford, IN, which is about 35 minutes from Bloomington. Depending on the seasonsal crop rotation, I especially enjoy the views of a cornfield or beanfield against the backdrop of the Laura Hare Nature Preserve. Being surrounded by nature is important to me. I am an enthusiastic gardener with a thriving rose garden, and sadly, a blighted tomato raised bed. This is a highly therapeutic hobby for me.</p>
-  <p>Otherwise, my life revolves around my fiancé Jacob and two pets: Zima the Dog and Virgil the Cat. Since becoming engaged this past July, I decided to put my gardening hobby to good use and have been practicing bouqet making with what I can currently find around the property.</p>
-  <p>Last thing to add is that I do not know what I would do or where I would be without ART.</p>
-  </div>
-</body>
-</html>
+
+      <div class="separator"></div>
+
+      <div class="main-content">
+        <div class="course-section">
+          <h2>About Your Instructor</h2>
+          <p>Hello — I'm Zuzanna Koziatek, your instructor for ENG-W131: Reading, Writing, and Inquiry. I am passionate about teaching and sharing what I know about the Writing Process and multimodal[...]
+          <p>I love what I do and want you to know that I am here for you this semester. As an undergrad, I often thought coming to office hours would annoy my professors, but becoming an instructor myse[...]
+          <p>I am originally from Poland and moved to Cleveland, Ohio with my parents when I was ten years old. I initially studied English and Psychology at Cleveland State University, then moved on to [...]
+          <p>Since coming to IU, I have moved to the outskirts of Bedford, IN, which is about 35 minutes from Bloomington. Depending on the seasonsal crop rotation, I especially enjoy the views of a cornfield[...]
+          <p>Otherwise, my life revolves around my fiancé Jacob and two pets: Zima the Dog and Virgil the Cat. Since becoming engaged this past July, I decided to put my gardening hobby to good use and have [...]
+          <p>Last thing to add is that I do not know what I would do or where I would be without ART.</p>
+        </div>
+      </div>
+    </body>
+    </html>
 </body>
 </html>
