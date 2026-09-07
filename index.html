@@ -154,6 +154,121 @@
             margin-bottom: 0;
         }
 
+        /* Image Slider Styles */
+        .image-slider-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .slider-display {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            object-fit: cover;
+        }
+
+        .slider-image.active {
+            opacity: 1;
+        }
+
+        .slider-info {
+            padding: 1rem;
+            background: #fff;
+            border-radius: 0 0 8px 8px;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .slider-button {
+            background: var(--primary-medium);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .slider-button:hover {
+            background: var(--primary-dark);
+        }
+
+        .slider-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .slider-counter {
+            color: var(--text-light);
+            font-weight: 600;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary-medium);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 3.5rem;
@@ -187,6 +302,18 @@
             .course-section {
                 padding: 1.5rem;
                 margin: 1rem;
+            }
+
+            .slider-display {
+                height: 300px;
+            }
+
+            .slider-controls {
+                flex-direction: column;
+            }
+
+            .slider-button {
+                width: 100%;
             }
         }
     </style>
@@ -223,8 +350,90 @@
             <p>Otherwise, my life revolves around my fiancé Jacob and our two pets: Zima the Dog and Virgil the Cat. Since becoming engaged this past July, I decided to put my gardening hobby to good use and have been putting together bouquets. I make them with what I can currently find around the property.</p>
 
             <p>The last thing to add is that I do not know what I would do or where I would be without ART. At this point, I could probably open a studio with small private classes with how many different cool art projects I could lead people into...lol.</p>
+
+            <!-- Image Slider -->
+            <div class="image-slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-display" id="sliderDisplay">
+                        <img src="Travel.jpg" alt="Travel" class="slider-image active" data-description="Travel memories from around the world">
+                        <img src="Warsaw.jpg" alt="Warsaw" class="slider-image" data-description="Beautiful views of Warsaw, Poland">
+                        <img src="WritingProcess.png" alt="Writing Process" class="slider-image" data-description="My approach to the writing process">
+                        <img src="Roses Thriving.jpeg" alt="Roses" class="slider-image" data-description="My thriving rose garden">
+                        <img src="Me and Jacob (2).jpeg" alt="Me and Jacob" class="slider-image" data-description="With my fiancé Jacob">
+                        <img src="Blank Backgroun Zima and Virgil.png" alt="Pets" class="slider-image" data-description="Zima and Virgil, our beloved pets">
+                        <img src="Purple Corn.jpg" alt="Purple Corn" class="slider-image" data-description="Purple corn from the local harvest">
+                        <img src="Water Monster.png" alt="Water Monster" class="slider-image" data-description="An art project: Water Monster">
+                        <img src="Sheriff Fish.png" alt="Sheriff Fish" class="slider-image" data-description="An art project: Sheriff Fish">
+                    </div>
+
+                    <div class="slider-info">
+                        <p class="slider-description" id="sliderDescription">Travel memories from around the world</p>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                        <span class="slider-counter"><span id="currentSlide">1</span> / <span id="totalSlides">9</span></span>
+                        <button class="slider-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+                    </div>
+
+                    <div class="slider-dots" id="sliderDots"></div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.slider-image');
+        const totalSlides = images.length;
+
+        // Initialize dots
+        const dotsContainer = document.getElementById('sliderDots');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(index) {
+            // Remove active class from all images and dots
+            images.forEach(img => img.classList.remove('active'));
+            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+
+            // Add active class to current image and dot
+            images[index].classList.add('active');
+            document.querySelectorAll('.dot')[index].classList.add('active');
+
+            // Update description
+            const description = images[index].getAttribute('data-description');
+            document.getElementById('sliderDescription').textContent = description;
+
+            // Update counter
+            document.getElementById('currentSlide').textContent = index + 1;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Initialize
+        showSlide(0);
+    </script>
 
 </body>
 </html>
