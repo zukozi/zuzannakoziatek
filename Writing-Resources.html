@@ -9,8 +9,9 @@
         :root{
             --bg:#fafafa; --card:#ffffff; --text:#1a1a1a; --muted:#555;
             --accent: #2d6a4f; --shadow: 0 6px 18px rgba(0,0,0,0.08);
+            --font-family: Calibri, Helvetica, 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        body{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:var(--bg); color:var(--text); }
+        body{ font-family: var(--font-family); background:var(--bg); color:var(--text); }
         header{ background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("We're Just Here for the view.png"); background-size:cover; background-position:center; padding:6rem 2rem; text-align:center; color:#fff; min-height:400px; display:flex; align-items:center; justify-content:center; }
         header h1{ font-size:3rem; text-shadow:2px 2px 8px rgba(0,0,0,0.6); }
         header .subtitle{ opacity:0.95; margin-top:0.5rem; }
@@ -20,6 +21,7 @@
         .container{ max-width:1200px; margin:2rem auto; padding:1rem; }
         .course-section{ background:var(--card); padding:1.5rem; border-radius:10px; box-shadow:var(--shadow); margin-bottom:1.5rem; }
         .course-section h2{ text-align:center; color:var(--accent); margin-bottom:0.5rem; }
+        .course-section p{ color:var(--text); line-height:1.6; font-family: var(--font-family); }
 
         /* Video section styles */
         .video-section { display:flex; justify-content:center; }
@@ -45,7 +47,7 @@
         .lightbox-info{ flex:1 1 40%; padding:1.25rem; background:#fff; }
         .lightbox-info h3{ margin-bottom:0.5rem; color:var(--accent); }
         .lightbox-info h4{ margin:0.25rem 0 0.75rem; color:var(--muted); font-weight:600; }
-        .lightbox-info p{ color:var(--text); line-height:1.6; }
+        .lightbox-info p{ color:var(--text); line-height:1.6; font-family: var(--font-family); }
         .lightbox-close{ position:absolute; right:24px; top:18px; background:transparent; border:none; color:#fff; font-size:1.6rem; cursor:pointer; }
 
         /* Responsive */
