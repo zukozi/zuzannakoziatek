@@ -4,37 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zuzanna koziatek</title>
+    <link rel="stylesheet" href="styles-enhanced.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --font-family-accessible: Calibri, Helvetica, 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
-            --primary-color: #333333;
-            --secondary-color: #666666;
-            --background-color: #ffffff;
-            --primary-dark: #1b4332;
-            --primary-medium: #2d6a4f;
-            --accent-lighter: #f1f5fe;
-            --text-dark: #1a1a1a;
-            --text-light: #555555;
-            --border-color: #e0e0e0;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow: 0 6px 18px rgba(0,0,0,0.08);
-        }
-
-        body {
-            font-family: var(--font-family-accessible);
-            background-color: var(--background-color);
-            color: var(--primary-color);
-        }
-
-        p {
-            font-family: var(--font-family-accessible);
-        }
+        /* ========================================== 
+           INDEX-SPECIFIC OVERRIDES
+           ========================================== */
 
         header {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("We're Just Here for the view.png");
@@ -52,7 +26,7 @@
 
         h1 {
             font-size: 5rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -0.02em;
             line-height: 1.1;
             color: #ffffff;
@@ -88,18 +62,22 @@
             padding: 1rem;
             background-color: #fafafa;
             border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 1200px;
         }
 
         nav a {
-            color: #555555;
+            color: #0f0f1e;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
             padding: 0.6rem 1.2rem;
             transition: all 0.3s ease;
             border-radius: 4px;
             position: relative;
-            font-family: var(--font-family-accessible);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Calibri, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         nav a::after {
@@ -108,14 +86,14 @@
             bottom: 0;
             left: 50%;
             width: 0;
-            height: 2px;
-            background-color: #555555;
+            height: 3px;
+            background-color: #c41e3a;
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
 
         nav a:hover {
-            background-color: rgba(85, 85, 85, 0.1);
+            background-color: rgba(196, 30, 58, 0.1);
         }
 
         nav a:hover::after {
@@ -123,8 +101,9 @@
         }
 
         .separator {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+            height: 2px;
+            background: linear-gradient(to right, transparent, #c41e3a, transparent);
+            margin: 0;
         }
 
         .container {
@@ -134,25 +113,28 @@
         }
 
         .course-section {
-            background: var(--background-color);
+            background: #ffffff;
             padding: 1.5rem;
             border-radius: 10px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 6px 18px rgba(15, 15, 30, 0.12);
             margin-bottom: 1.5rem;
+            border-left: 5px solid #c41e3a;
         }
 
         .course-section h2 {
             text-align: center;
-            color: var(--primary-medium);
+            color: #0f0f1e;
             margin-bottom: 0.5rem;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .course-section p {
-            color: var(--text-light);
-            line-height: 1.6;
+            color: #4a4a5e;
+            line-height: 1.8;
             margin-bottom: 1rem;
-            font-family: var(--font-family-accessible);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Calibri, sans-serif;
         }
 
         .about-instructor p:last-child {
@@ -163,9 +145,9 @@
         .image-slider-container {
             margin-top: 2rem;
             padding: 1.5rem;
-            background: #f9f9f9;
+            background: #f5f5f7;
             border-radius: 10px;
-            border: 1px solid var(--border-color);
+            border-left: 3px solid #0d7377;
         }
 
         .slider-wrapper {
@@ -185,6 +167,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 16px 32px rgba(15, 15, 30, 0.15);
         }
 
         .slider-image {
@@ -209,13 +192,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-top: 1px solid #d4d4d8;
         }
 
         .slider-description {
-            color: var(--text-light);
+            color: #4a4a5e;
             font-size: 0.95rem;
             line-height: 1.5;
-            font-family: var(--font-family-accessible);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Calibri, sans-serif;
+            font-weight: 500;
         }
 
         .slider-controls {
@@ -227,33 +212,45 @@
         }
 
         .slider-button {
-            background: var(--primary-medium);
+            background: #c41e3a;
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 1.5rem;
             border-radius: 6px;
             cursor: pointer;
             font-size: 1rem;
-            font-weight: 600;
-            transition: background 0.3s ease;
-            font-family: var(--font-family-accessible);
+            font-weight: 700;
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Calibri, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            box-shadow: 0 8px 16px rgba(15, 15, 30, 0.12);
         }
 
         .slider-button:hover {
-            background: var(--primary-dark);
+            background: #a01830;
+            box-shadow: 0 16px 32px rgba(15, 15, 30, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .slider-button:active {
+            transform: translateY(0);
         }
 
         .slider-button:disabled {
-            background: #ccc;
+            background: #d4d4d8;
             cursor: not-allowed;
+            transform: none;
         }
 
         .slider-counter {
-            color: var(--text-light);
-            font-weight: 600;
+            color: #4a4a5e;
+            font-weight: 700;
             min-width: 50px;
             text-align: center;
-            font-family: var(--font-family-accessible);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Calibri, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .slider-dots {
@@ -268,13 +265,15 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #ddd;
+            background: #d4d4d8;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .dot.active {
-            background: var(--primary-medium);
+            background: #c41e3a;
+            border-color: #0f0f1e;
         }
 
         @media (max-width: 768px) {
@@ -347,17 +346,17 @@
         <div class="course-section about-instructor">
             <h2>About Your Instructor</h2>
 
-            <p>Hello — I'm Zuzanna Koziatek, your instructor for ENG-W131: Reading, Writing, and Inquiry. I am passionate about teaching and sharing what I know about the Writing Process and multimodal composition with my students. Likewise, I take pride in being a part of my students' growth as critical thinkers. In a world that is too often strange and puzzling, full of questionable phenomena, I hope my students take what they learn about analysis and apply it beyond their college writing.</p>
+            <p>Hello — I'm Zuzanna Koziatek, your instructor for ENG-W131: Reading, Writing, and Inquiry. I am passionate about teaching and sharing what I know about the Writing Process and mu[...]
 
-            <p>Despite it being during the pandemic, the first time I taught an online English composition course solidified any lingering doubts about whether I should pursue a PhD in English or Psychology instead. I love what I do and want you to know that I am here for you this semester. As an undergrad, I often thought coming to office hours would annoy my professors, but becoming an instructor myself, I realized we LOVE IT when students attend.</p>
+            <p>Despite it being during the pandemic, the first time I taught an online English composition course solidified any lingering doubts about whether I should pursue a PhD in English or[...]
 
-            <p>I am originally from Poland and moved to Cleveland, Ohio with my parents when I was ten years old. I initially studied English and Psychology at Cleveland State University, then moved on to CSU's MA program in English literature. In 2021, I moved to Bloomington, IN to pursue a PhD in English (Rhetoric). My scholarly interests include but are not limited to multimodal composition, mindful writing, online teaching, the rhetoric of health and medicine, and mental health rhetoric research.</p>
+            <p>I am originally from Poland and moved to Cleveland, Ohio with my parents when I was ten years old. I initially studied English and Psychology at Cleveland State University, then mo[...]
 
-            <p>Since coming to IU, I have moved to the outskirts of Bedford, IN, which is about 35 minutes from Bloomington. Depending on the seasonal crop rotation, I especially enjoy the views of a cornfield or beanfield against the backdrop of the Laura Hare Nature Preserve. Being surrounded by nature is important to me. I am an enthusiastic gardener with a thriving rose garden, and sadly, a blighted tomato raised bed. This is a highly therapeutic hobby for me.</p>
+            <p>Since coming to IU, I have moved to the outskirts of Bedford, IN, which is about 35 minutes from Bloomington. Depending on the seasonal crop rotation, I especially enjoy the views [...]
 
-            <p>Otherwise, my life revolves around my fiancé Jacob and our two pets: Zima the Dog and Virgil the Cat. Since becoming engaged this past July, I decided to put my gardening hobby to good use and have been putting together bouquets. I make them with what I can currently find around the property.</p>
+            <p>Otherwise, my life revolves around my fiancé Jacob and our two pets: Zima the Dog and Virgil the Cat. Since becoming engaged this past July, I decided to put my gardening hobby to[...]
 
-            <p>The last thing to add is that I do not know what I would do or where I would be without ART. At this point, I could probably open a studio with small private classes with how many different cool art projects I could lead people into...lol.</p>
+            <p>The last thing to add is that I do not know what I would do or where I would be without ART. At this point, I could probably open a studio with small private classes with how many [...]
 
             <!-- Image Slider -->
             <div class="image-slider-container">
