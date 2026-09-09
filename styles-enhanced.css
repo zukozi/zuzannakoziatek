@@ -24,7 +24,7 @@ html, body {
     --text-secondary: #003189;      /* Royal blue */
     --text-light: #4a4a5e;          /* Muted gray (kept for readability) */
 
-    --background: #D5DCF7;          /* Pastel sky */
+    --background: #003189;          /* Pastel sky */
     --card-bg: #ffffff;             /* Pure white */
 
     --border: #d4d4d8;              /* Subtle border */
