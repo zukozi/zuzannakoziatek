@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Zuz Writing Podcast - zuzanna koziatek</title>
+    <link rel="stylesheet" href="styles-enhanced.css">
+    <style>
+        /* ========================================== 
+           PODCAST PAGE OVERRIDES
+           ========================================== */
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("We're Just Here for the view.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            letter-spacing: -0.5px;
+            color: white;
+        }
+
+        header .subtitle {
+            font-size: 2rem;
+            opacity: 0.95;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: transparent;
+            margin: 2rem auto;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0f0f1e;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        nav a.active {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        .separator {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #2c3e50, transparent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .podcast-section {
+            background: #D5DCF7;
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(15, 15, 30, 0.12);
+            margin-bottom: 2rem;
+            border-left: 5px solid #2c3e50;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .podcast-section h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 1rem;
+            background: #2c3e50;
+            margin: -2rem -2rem 1.5rem -2rem;
+            padding: 1.5rem 2rem 1rem 2rem;
+        }
+
+        .podcast-section p {
+            color: black;
+            line-height: 1.8;
+            font-family: 'DejaVu Sans', sans-serif;
+            font-weight: 350;
+            margin-bottom: 20px;
+        }
+
+        .podcast-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Episode list styles */
+        .episodes-section {
+            margin-top: 2rem;
+        }
+
+        .episode-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #2c3e50;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(15, 15, 30, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .episode-item:hover {
+            box-shadow: 0 6px 16px rgba(15, 15, 30, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .episode-item h3 {
+            color: #2c3e50;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .episode-item .episode-number {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .episode-item p {
+            color: #333;
+            line-height: 1.6;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .episode-item .episode-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: white;
+            background: #2c3e50;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .episode-item .episode-link:hover {
+            background: #1a252f;
+            transform: translateX(2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 3.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .podcast-section {
+                padding: 1.5rem;
+            }
+
+            .episode-item {
+                padding: 1rem;
+            }
+
+            .episode-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>The Zuz Writing Podcast</h1>
+            <p class="subtitle">Exploring the craft of writing</p>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Writing-Resources.html">Writing Resources</a>
+        <a href="the-zuz-writing-podcast.html" class="active">The Zuz Writing Podcast</a>
+        <a href="teaching-portfolio.html">Teaching Portfolio</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+    <div class="separator"></div>
+    <div class="container">
+        <div class="podcast-section">
+            <h2>The Zuz Writing Podcast</h2>
+            <div class="podcast-intro">
+                <p>Welcome to The Zuz Writing Podcast, where we explore the craft of writing, the writing process, and everything in between. Join me as we discuss writing techniques, literary analysis, and the journey of becoming a better writer.</p>
+            </div>
+            <div class="episodes-section">
+                <p style="text-align: center; color: #666; font-style: italic;">Episodes coming soon! Check back for the latest episodes and discussions about writing.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
