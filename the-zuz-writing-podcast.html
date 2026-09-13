@@ -132,12 +132,13 @@
 
         .episode-item {
             background: white;
-            padding: 1.5rem;
+            padding: 1.75rem;
             margin-bottom: 1.5rem;
             border-left: 4px solid #2c3e50;
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(15, 15, 30, 0.08);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .episode-item:hover {
@@ -154,17 +155,18 @@
 
         .episode-item .episode-number {
             color: #666;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 0.2px;
+            margin-bottom: 1rem;
         }
 
         .episode-item p {
             color: #333;
             line-height: 1.6;
-            margin: 0.5rem 0 1rem 0;
+            margin: 0.5rem auto 1.25rem auto;
+            max-width: 700px;
         }
 
         .episode-item .episode-link {
@@ -172,7 +174,7 @@
             margin-top: 1rem;
             color: white;
             background: #2c3e50;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.25rem;
             text-decoration: none;
             border-radius: 3px;
             font-weight: 600;
@@ -182,14 +184,14 @@
 
         .episode-item .episode-link:hover {
             background: #1a252f;
-            transform: translateX(2px);
+            transform: translateY(-1px);
         }
 
         .episode-video {
             position: relative;
             width: 100%;
-            max-width: 100%;
-            margin-top: 1rem;
+            max-width: 760px;
+            margin: 1.25rem auto 0 auto;
             overflow: hidden;
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(15, 15, 30, 0.12);
@@ -255,10 +257,12 @@
             <div class="episodes-section">
                 <div class="episode-item">
                     <h3>Episode 1: The Yellow Wallpaper as a Lens</h3>
-                    <div class="episode-number">Date: September 13, 2026</div>
+                    <div class="episode-number">September 13, 2026</div>
+                    <p>In this first episode, we explore how <em>The Yellow Wallpaper</em> can serve as a lens for thinking about voice, perception, confinement, and the deeper layers of literary interpretation.</p>
                     <div class="episode-video">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/dovfPJ6fOic?si=V1gQJFYpOKuip3NR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
+                    <a class="episode-link" href="https://www.youtube.com/watch?v=dovfPJ6fOic" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
                 </div>
             </div>
         </div>
