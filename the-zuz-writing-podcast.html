@@ -185,6 +185,24 @@
             transform: translateX(2px);
         }
 
+        .episode-video {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 1rem;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(15, 15, 30, 0.12);
+            background: #000;
+        }
+
+        .episode-video iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            display: block;
+        }
+
         /* Responsive */
         @media (max-width: 600px) {
             header {
@@ -232,10 +250,16 @@
         <div class="podcast-section">
             <h2>The Zuz Writing Podcast</h2>
             <div class="podcast-intro">
-                <p>Welcome to The Zuz Writing Podcast, where we explore the craft of writing, the writing process, and everything in between. Join me as we discuss writing techniques, literary analysis, and the journey of becoming a better writer.</p>
+                <p>Welcome to The Zuz Writing Podcast, where we explore the craft of writing, the writing process, and everything in between. Join me as we discuss writing techniques, literary analysis, and creative expression.</p>
             </div>
             <div class="episodes-section">
-                <p style="text-align: center; color: #666; font-style: italic;">Episodes coming soon! Check back for the latest episodes and discussions about writing.</p>
+                <div class="episode-item">
+                    <h3>Episode 1: The Yellow Wallpaper as a Lens</h3>
+                    <div class="episode-number">Date: September 13, 2026</div>
+                    <div class="episode-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dovfPJ6fOic?si=V1gQJFYpOKuip3NR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
