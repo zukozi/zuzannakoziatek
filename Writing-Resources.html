@@ -129,10 +129,60 @@ li {
   margin-bottom: 20px;
 }
 
-        /* Video section styles */
-        .video-section {
-            display: flex;
-            justify-content: center;
+.collapsible-details {
+    margin-top: 1.5rem;
+}
+
+.collapsible-details summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: #2c3e50;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid #2c3e50;
+    transition: all 0.3s ease;
+    list-style: none;
+}
+
+.collapsible-details summary:hover {
+    background: white;
+    color: #2c3e50;
+}
+
+.collapsible-details summary:focus-visible {
+    background: white;
+    color: #2c3e50;
+    outline: 3px solid rgba(44, 62, 80, 0.35);
+    outline-offset: 3px;
+}
+
+.collapsible-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.collapsible-details .read-less-text {
+    display: none;
+}
+
+.collapsible-details[open] .read-more-text {
+    display: none;
+}
+
+.collapsible-details[open] .read-less-text {
+    display: inline;
+}
+
+.collapsible-content {
+    margin-top: 1.5rem;
+}
+
+/* Video section styles */
+.video-section {
+    display: flex;
+    justify-content: center;
             margin: 2rem 0;
         }
 
@@ -410,6 +460,12 @@ li {
 <h3><strong>Part 1: Revisiting Rhetorical Analysis</strong></h3>
 <p>We began by revisiting several medical and pharmaceutical advertisements from the 1950s through the early 2000s.</p>
 <p><strong>As we looked at each advertisement, we continued practicing rhetorical analysis by asking:</strong></p>
+<details class="collapsible-details">
+    <summary>
+        <span class="read-more-text">Read more</span>
+        <span class="read-less-text">Read less</span>
+    </summary>
+    <div class="collapsible-content">
 <ul style="padding-left: 90px;">
     <li>Who is the intended audience?</li>
     <li>What is the purpose of the advertisement?</li>
@@ -580,6 +636,8 @@ li {
 <p><strong>OR</strong> sometimes if the observations and pattern are rich enough,</p>
 <p>Observations --&gt; Patterns = Phenomena</p>
 <p>The goal of inquiry is not simply to notice things. The goal is to begin identifying the larger ideas, processes, tensions, and phenomena that help explain why those observations keep appearing. That is the same process you will use as you continue developing your inquiry notebooks and working toward your lens-based essay.</p>
+    </div>
+</details>
         </div>
     <div class="separator"></div>
         <div class="course-section">
@@ -590,6 +648,12 @@ li {
 <p><span data-contrast="auto">As medicine became more&nbsp;professionalized, doctors and pharmacists became recognized as&nbsp;the primary&nbsp;medical experts. Pharmaceutical companies increasingly directed prescription drug advertisements toward physicians rather than patients. These advertisements often appeared in medical journals and professional publications.&nbsp;</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:0,&quot;335551620&quot;:0,&quot;335559738&quot;:210,&quot;335559739&quot;:210,&quot;335559740&quot;:300}">&nbsp;</span></p>
 <h3 aria-level="2"><strong>1950s-1970s&nbsp;</strong></h3>
 <p><span data-contrast="auto">Many advertisements for tranquilizers, antidepressants, and other medications were designed to persuade doctors about how patients should be understood and treated.&nbsp;Rather than speaking directly to consumers, these ads often&nbsp;framed&nbsp;medical professionals as the&nbsp;decision-makers.&nbsp;</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:0,&quot;335551620&quot;:0,&quot;335559738&quot;:210,&quot;335559739&quot;:210,&quot;335559740&quot;:300}">&nbsp;</span></p>
+<details class="collapsible-details">
+    <summary>
+        <span class="read-more-text">Read more</span>
+        <span class="read-less-text">Read less</span>
+    </summary>
+    <div class="collapsible-content">
 <h3 aria-level="2"><strong>1980s-1990s&nbsp;</strong></h3>
 <p><span data-contrast="auto">Pharmaceutical companies began experimenting with direct-to-consumer advertising. In 1997, FDA policy changes made television advertising for prescription drugs much easier, leading to the widespread drug commercials familiar today.&nbsp;</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:0,&quot;335551620&quot;:0,&quot;335559738&quot;:210,&quot;335559739&quot;:210,&quot;335559740&quot;:300}">&nbsp;</span></p>
 <h3 aria-level="2"><strong>Today&nbsp;</strong></h3>
@@ -603,6 +667,8 @@ li {
 <h3><strong>AI Acknowledgment:&nbsp;</strong></h3>
 <p><span data-contrast="auto">Portions of this timeline were summarized and organized with&nbsp;assistance&nbsp;from Microsoft Copilot based on information from Leo Ryan's "Dose of History: A Brief History of Drug Advertising and Regulation."</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:0,&quot;335551620&quot;:0,&quot;335559738&quot;:0,&quot;335559739&quot;:0,&quot;335559740&quot;:300}">&nbsp;</span></p>
 <p><span data-ccp-props="{}">&nbsp;</span></p>
+    </div>
+</details>
     </section>
     </div>
     <div class="container">
