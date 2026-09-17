@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <link rel="stylesheet" href="styles-enhanced.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            order: 2;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: transparent;
+            margin: 2rem auto;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0f0f1e;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        main {
+            order: 1;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("We%27re%20Just%20Here%20for%20the%20view.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            letter-spacing: -0.5px;
+            color: white;
+        }
+
+        .separator {
+            order: 3;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #2c3e50, transparent);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 3.5rem 1rem;
+                background-attachment: scroll;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Writing-Resources.html">Writing Resources</a>
+        <a href="the-zuz-writing-podcast.html">The Zuz Writing Podcast</a>
+        <a href="teaching-portfolio.html">Teaching Portfolio</a>
+        <a href="projects.html" class="active">Projects</a>
+    </nav>
+    <main aria-labelledby="page-title">
+        <header>
+            <div class="header-content">
+                <h1 id="page-title">Project 1: Lens-Based Analysis Essay</h1>
+            </div>
+        </header>
+    </main>
+    <div class="separator"></div>
+</body>
+</html>
