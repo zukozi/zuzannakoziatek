@@ -137,6 +137,7 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     background: #2c3e50;
     color: white;
@@ -160,6 +161,24 @@ li {
 
 .collapsible-details .read-less-text {
     display: none;
+}
+
+.summary-indicator {
+    display: inline-block;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.summary-indicator::before {
+    content: '▸';
+}
+
+.collapsible-details[open] .summary-indicator {
+    transform: translateY(-1px);
+}
+
+.collapsible-details[open] .summary-indicator::before {
+    content: '▾';
 }
 
 .collapsible-details[open] .read-more-text {
@@ -457,6 +476,7 @@ li {
 <p><strong>As we looked at each advertisement, we continued practicing rhetorical analysis by asking:</strong></p>
 <details class="collapsible-details">
     <summary>
+        <span class="summary-indicator" aria-hidden="true"></span>
         <span class="read-more-text">Read more from the course summary</span>
         <span class="read-less-text">Read less from the course summary</span>
     </summary>
@@ -645,6 +665,7 @@ li {
 <p><span data-contrast="auto">Many advertisements for tranquilizers, antidepressants, and other medications were designed to persuade doctors about how patients should be understood and treated.&nbsp;Rather than speaking directly to consumers, these ads often&nbsp;framed&nbsp;medical professionals as the&nbsp;decision-makers.&nbsp;</span><span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:0,&quot;335551620&quot;:0,&quot;335559738&quot;:210,&quot;335559739&quot;:210,&quot;335559740&quot;:300}">&nbsp;</span></p>
 <details class="collapsible-details">
     <summary>
+        <span class="summary-indicator" aria-hidden="true"></span>
         <span class="read-more-text">Read more from the timeline</span>
         <span class="read-less-text">Read less from the timeline</span>
     </summary>
